@@ -1,0 +1,11 @@
+.header-logo {
+  flex-grow: 1;
+}
+.header-title {
+  flex-grow: 1;
+}
+.app-header {
+  -webkit-box-shadow: 0 0.1875rem 0.1875rem 0 rgba(192, 192, 192, 0.75);
+  -moz-box-shadow: 0 0.1875rem 0.1875rem 0 rgba(192, 192, 192, 0.75);
+  box-shadow: 0 0.1875rem 0.1875rem 0 rgba(192, 192, 192, 0.75);
+}
