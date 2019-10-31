@@ -23,15 +23,9 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { HeaderComponent } from './components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainFormComponent } from './components/main-form/main-form.component';
-import { DynamicTextFieldComponent } from './components/dynamic-text-field/dynamic-text-field.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    MainFormComponent,
-    DynamicTextFieldComponent
-  ],
+  declarations: [AppComponent, HeaderComponent, MainFormComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
