@@ -58,6 +58,7 @@
         <h1>Tasks completed this week</h1>
         <button
           mat-icon-button
+          type="button"
           color="primary"
           (click)="addToList('completedList')"
         >
@@ -74,12 +75,13 @@
           <mat-form-field class="completed-col-2-ff" appearance="outline">
             <textarea
               matInput
-              placeholdxser="tasks completed this week"
+              placeholder="tasks completed this week"
               formControlName="{{ i }}"
             ></textarea>
           </mat-form-field>
           <button
             mat-icon-button
+            type="button"
             color="accent"
             (click)="removeFromList('completedList', i)"
           >
@@ -96,6 +98,7 @@
         <h1>Tasks in progress this week</h1>
         <button
           mat-icon-button
+          type="button"
           color="primary"
           (click)="addToList('inProgressList')"
         >
@@ -118,6 +121,7 @@
           </mat-form-field>
           <button
             mat-icon-button
+            type="button"
             color="accent"
             (click)="removeFromList('inProgressList', i)"
           >
@@ -133,6 +137,7 @@
         <h1>Tasks starting next week</h1>
         <button
           mat-icon-button
+          type="button"
           color="primary"
           (click)="addToList('startingList')"
         >
@@ -155,6 +160,7 @@
           </mat-form-field>
           <button
             mat-icon-button
+            type="button"
             color="accent"
             (click)="removeFromList('startingList', i)"
           >
@@ -170,6 +176,7 @@
         <h1>Issues for immediate attention</h1>
         <button
           mat-icon-button
+          type="button"
           color="primary"
           (click)="addToList('issuesList')"
         >
@@ -192,6 +199,7 @@
           </mat-form-field>
           <button
             mat-icon-button
+            type="button"
             color="accent"
             (click)="removeFromList('issuesList', i)"
           >
