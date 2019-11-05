@@ -10,6 +10,6 @@ app.use(express.static(__dirname + '/dist/status-report'));
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname + '/dist/status-report/index.html'));
 });
-
+console.log(port,process.env.PORT);
 // Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || port);
