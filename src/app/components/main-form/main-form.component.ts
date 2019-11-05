@@ -41,17 +41,21 @@ export class MainFormComponent implements OnInit {
     return this.statusForm.get('issues') as FormArray;
   }
   addToList(key) {
-    console.log(key);
     this[key].push(new FormControl(''));
   }
   removeFromList(key, index) {
-    console.log(key, index);
-
     this[key].removeAt(index);
   }
-  formatDate(date) {
+  formatDate(date, delimiter = '/') {
     if (!date) return;
-    return [date.getMonth() + 1, date.getDate(), date.getFullYear()].join('/');
+    return this.appendZero([
+      date.getMonth() + 1,
+      date.getDate(),
+      date.getFullYear()
+    ]).join(delimiter);
+  }
+  appendZero(list) {
+    return list.map(each => (each < 10 ? '0' + each : each));
   }
   getList(header, list) {
     const sectionHeader = {
@@ -176,7 +180,13 @@ export class MainFormComponent implements OnInit {
           alignment: 'justify'
         }
       })
-      .download();
-    console.log(this.statusForm);
+      .download(
+        [
+          firstName.value,
+          lastName.value,
+          this.formatDate(startDate.value, ''),
+          this.formatDate(endDate.value, '')
+        ].join('_')
+      );
   }
 }
