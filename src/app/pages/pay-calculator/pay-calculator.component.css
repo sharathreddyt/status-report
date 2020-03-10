@@ -19,10 +19,6 @@
 	width: 100%;
 }
 
-.mf-col-1 {
-	display: flex;
-	flex-wrap: wrap;
-}
 .mf-item-1 {
 	flex-grow: 1;
 	padding-right: 5px;
@@ -36,4 +32,29 @@
 	display: flex;
 	justify-content: flex-end;
 	margin-top: 30px;
+}
+.pc-div-column {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.pc-margin {
+	margin: 10px 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.pc-error-container {
+	color: red;
+	margin: 40px 0px 20px;
+	width: 100%;
+}
+
+.pc-result-container {
+	margin: 40px 0px 20px;
+	width: 100%;
+	padding: 0px 16px;
+}
+.pc-result-each {
+	display: flex;
 }

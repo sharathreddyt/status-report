@@ -1,0 +1,66 @@
+<mat-card class="main-form-container">
+    <form [formGroup]="calculatorForm" (ngSubmit)="onSubmit()">
+        <div class="mf-col-1">
+            <mat-form-field class="mf-item-1" appearance="outline">
+                <mat-label>Hours</mat-label>
+                <input matInput placeholder="0" formControlName="hours" />
+            </mat-form-field>
+            <mat-form-field class="mf-item-2" appearance="outline">
+                <mat-label>Pay Rate</mat-label>
+                <input matInput placeholder="0" formControlName="payRate" />
+            </mat-form-field>
+        </div>
+        <div class="pc-margin">
+            <mat-label>Exempt from:</mat-label>
+        </div>
+        <div class="pc-div-column">
+            <mat-checkbox placeholder="0" formControlName="exemptFederal"> Federal</mat-checkbox>
+            <mat-checkbox placeholder="0" formControlName="exemptFica"> FICA</mat-checkbox>
+            <mat-checkbox placeholder="0" formControlName="exemptMedicare"> Medicare</mat-checkbox>
+        </div>
+        <div class="mf-submit">
+            <button mat-raised-button color="primary" type="submit" [disabled]="!calculatorForm.valid">
+                Calculate
+            </button>
+        </div>
+    </form>
+</mat-card>
+
+<mat-card class="pc-result-container" *ngIf="result">
+    <!-- <pre>{{result | json}}</pre> -->
+    <mat-list>
+        <div class="pc-result-each">
+            <mat-list-item>Net Pay</mat-list-item>
+            <mat-list-item>{{result.netPay}}</mat-list-item>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="pc-result-each">
+            <mat-list-item>Gross Pay</mat-list-item>
+            <mat-list-item>{{result.grossPay}}</mat-list-item>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="pc-result-each">
+            <mat-list-item>Federal Tax</mat-list-item>
+            <mat-list-item>{{result.federal}}</mat-list-item>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="pc-result-each">
+            <mat-list-item>State Tax</mat-list-item>
+            <mat-list-item>{{result.state}}</mat-list-item>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="pc-result-each">
+            <mat-list-item>Medicare</mat-list-item>
+            <mat-list-item>{{result.medicare}}</mat-list-item>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="pc-result-each">
+            <mat-list-item>FICA</mat-list-item>
+            <mat-list-item>{{result.fica}}</mat-list-item>
+        </div>
+        <mat-divider></mat-divider>
+    </mat-list>
+</mat-card>
+<mat-card class="pc-error-container" *ngIf="error">
+    <pre>{{error.error.message | json}}</pre>
+</mat-card>
