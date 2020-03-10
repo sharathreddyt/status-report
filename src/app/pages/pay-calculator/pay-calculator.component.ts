@@ -19,8 +19,8 @@ export class PayCalculatorComponent implements OnInit {
 		exemptMedicare: new FormControl(true)
 	});
 
-	private result: any;
-	private error: any;
+	public result: any;
+	public error: any;
 	ngOnInit() {}
 
 	onSubmit() {
